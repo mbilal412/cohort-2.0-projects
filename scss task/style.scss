@@ -1,0 +1,47 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    @mixin back_ground($sizeProp){
+        background-size: $sizeProp;
+        background-position: center;
+    }
+
+    section{
+        flex-grow: 1;
+        height: 100%;
+        @include back_ground(cover);
+        transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    section:nth-child(1){
+        background-image: url(./assets/1.jpg);
+    }
+    section:nth-child(2){
+        background-image: url(./assets/2.jpg);
+    }
+    section:nth-child(3){
+        background-image: url(./assets/3.jpg);
+    }
+    section:nth-child(4){
+        background-image: url(./assets/4.jpg);
+    }
+    section:nth-child(5){
+        background-image: url(./assets/5.jpg);
+    }
+    section:hover{
+       flex-grow: 2.5;
+    }
+}
