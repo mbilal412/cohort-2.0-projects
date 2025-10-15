@@ -11,9 +11,8 @@ body {
     height: 100%;
 }
 
-@mixin grid_area_setting($grid_area, $color, $back_img){
+@mixin grid_area_setting($grid_area, $back_img){
     grid-area: $grid_area;
-    background-color: $color;
     background-image: url(#{$back_img});
     background-size: cover;
     background-position: center;
@@ -30,22 +29,36 @@ main{
                          "img1 img3 img4 img5";
 
     section:nth-child(1){
-        @include grid_area_setting(img1, salmon, "./assets/1.jpg");
+        @include grid_area_setting(img1,  "./assets/1.jpg");
     }
     section:nth-child(2){
-        @include grid_area_setting(img2, magenta, "./assets/2.jpg");
+        @include grid_area_setting(img2,  "./assets/2.jpg");
     }
     section:nth-child(3){
-        @include grid_area_setting(img3, pink, "./assets/3.jpg");
+        @include grid_area_setting(img3, "./assets/3.jpg");
         
     }
     section:nth-child(4){
-        @include grid_area_setting(img4, maroon, "./assets/4.jpg");
+        @include grid_area_setting(img4,  "./assets/4.jpg");
         
     }
     section:nth-child(5){
-        @include grid_area_setting(img5, khaki, "./assets/5.jpg");
+        @include grid_area_setting(img5, "./assets/5.jpg");
 
     }
 
+}
+
+
+@media (max-width: 830px) {
+    main{
+    grid-template-rows: repeat(5, 60%);
+    grid-template-columns:  1fr;
+    grid-template-areas: "img1"
+                          "img2"
+                          "img3"
+                          "img4"
+                          "img5";
+    
+}
 }

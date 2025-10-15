@@ -23,36 +23,39 @@ main {
 }
 main section:nth-child(1) {
   grid-area: img1;
-  background-color: salmon;
   background-image: url(./assets/1.jpg);
   background-size: cover;
   background-position: center;
 }
 main section:nth-child(2) {
   grid-area: img2;
-  background-color: magenta;
   background-image: url(./assets/2.jpg);
   background-size: cover;
   background-position: center;
 }
 main section:nth-child(3) {
   grid-area: img3;
-  background-color: pink;
   background-image: url(./assets/3.jpg);
   background-size: cover;
   background-position: center;
 }
 main section:nth-child(4) {
   grid-area: img4;
-  background-color: maroon;
   background-image: url(./assets/4.jpg);
   background-size: cover;
   background-position: center;
 }
 main section:nth-child(5) {
   grid-area: img5;
-  background-color: khaki;
   background-image: url(./assets/5.jpg);
   background-size: cover;
   background-position: center;
+}
+
+@media (max-width: 830px) {
+  main {
+    grid-template-rows: repeat(5, 60%);
+    grid-template-columns: 1fr;
+    grid-template-areas: "img1" "img2" "img3" "img4" "img5";
+  }
 }/*# sourceMappingURL=style.css.map */
