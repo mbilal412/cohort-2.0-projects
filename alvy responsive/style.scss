@@ -2,61 +2,83 @@
     font-family: "satoshi";
     src: url(./fonts/63cffc20aa8997095067596f_Satoshi-Light.woff);
 }
+
 @font-face {
     font-family: "chillax";
     src: url(./fonts/63cffc0a3942456e003bc265_Chillax-Regular.woff);
 }
+
 @font-face {
     font-family: "roboto";
     src: url(./fonts/L0x5DF4xlVMF-BfR8bXMIjhLq38.woff2);
 }
 
-* {
-  margin: 0%;
-  padding: 0%;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-
-html{
-    font-size:  clamp(14px, 1.5vw, 18px);
-}
-
-
-@mixin flex($justify, $align){
+@mixin flex($justify, $align) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
 }
 
-#main{
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    color: white;
+}
+
+html,
+body {
     width: 100%;
     height: 100%;
-    @include flex(center, start);
-    background-color: #121212;
-    
+}
 
+body {
+    background-color: #121212;
+
+}
+
+html {
+    // font-size:  clamp(14px, 1.5vw, 18px);
+}
+
+
+
+
+#main {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    @include flex(start, center);
+    flex-direction: column;
+
+
+    nav {
+        font-size: 1rem;
+        width: 100%;
+        @include flex(space-between, center);
+        max-width: 2000px;
+
+        .navleft img {
+            width: 3.7rem;
+        }
+
+        .navright {
             display: flex;
             gap: 0.4rem;
 
-            .hide_below_990{
+            .hide_below_990 {
                 display: none;
             }
 
-            a{
+            a {
                 font-family: roboto, sans-serif;
                 text-decoration: none;
                 color: white;
-                padding: .7rem 1.25rem;
+                padding: 1rem 1.6rem;
                 background-color: #2A2A2A;
                 border-radius: .6rem;
 
-                span:nth-child(2){
+                span:nth-child(2) {
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
@@ -69,13 +91,79 @@ html{
                 }
             }
 
-            .getintouch{
+            .getintouch {
                 display: none;
                 background-color: #CEBD63;
                 color: black;
             }
 
-            
+
+        }
+    }
+
+    .section1 {
+        .top {
+            border-radius: 0.7rem;
+            overflow: hidden;
+            margin: 1.1rem 0rem;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .bottom {
+            border-radius: 0.7rem;
+            background-color: #1E1E1E;
+            @include flex(start, space-between);
+            flex-direction: column;
+            gap: 4.5rem;
+            padding: 2.2rem;
+
+            .top-content {
+                font-family: roboto, sans-serif;
+                font-size: 1.1rem;
+                color: rgb(238, 228, 228);
+
+            }
+
+            .bottom-content {
+
+                p:nth-child(1) {
+                    line-height: 1.25;
+                    text-transform: uppercase;
+                    font-family: chillax, sans-serif;
+                    font-size: 2.6rem;
+                }
+
+                p:nth-child(2) {
+
+                    font-family: satoshi, sans-serif;
+                    font-size: 1.6rem;
+                    margin: 1rem 0rem;
+                }
+
+                i {
+                    margin-right: 1rem;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.5rem;
+                    font-weight: 100;
+                    width: 2.7rem;
+                    height: 2.7rem;
+                    border-radius: 50%;
+                    border: 1px solid #404040;
+                    background-color: #292929;
+                    padding: 0.5rem;
+                }
+
+                .last-in-bottom-content {
+                    span {
+                        font-family: roboto, sans-serif;
+                    }
+                }
+            }
         }
     }
 }
@@ -83,15 +171,21 @@ html{
 
 
 @media (min-width: 480px) {
-    #main nav .navright .getintouch{
-                display: block;
-            }
+    #main nav .navright .getintouch {
+        display: block;
+    }
+
+    #main .section1 .bottom .bottom-content p:nth-child(1) {
+        font-size: 2.9rem;
+    }
 }
+
 @media (min-width: 990px) {
-    #main nav .navright .hide_below_990{
-                display: block;
-            }
-    #main nav .navright .hide_above_990{
-                display: none;
-            }
+    #main nav .navright .hide_below_990 {
+        display: block;
+    }
+
+    #main nav .navright .hide_above_990 {
+        display: none;
+    }
 }
