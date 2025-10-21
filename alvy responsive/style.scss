@@ -13,8 +13,9 @@
     src: url(./fonts/L0x5DF4xlVMF-BfR8bXMIjhLq38.woff2);
 }
 
-@mixin flex($justify, $align) {
+@mixin flex($justify, $align, $direction: 'row') {
     display: flex;
+    flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
 }
@@ -34,29 +35,23 @@ body {
 
 body {
     background-color: #121212;
-
 }
 
 html {
-    // font-size:  clamp(14px, 1.5vw, 18px);
+    font-size:  clamp(14px, 1.5vw, 18px);
 }
-
-
-
 
 #main {
     padding: 1rem;
     width: 100%;
     height: 100%;
-    @include flex(start, center);
-    flex-direction: column;
-
+    @include flex(start, center, column);
 
     nav {
-        font-size: 1rem;
+        font-size: .9rem;
         width: 100%;
         @include flex(space-between, center);
-        max-width: 2000px;
+        max-width: 1920px;
 
         .navleft img {
             width: 3.7rem;
@@ -74,7 +69,7 @@ html {
                 font-family: roboto, sans-serif;
                 text-decoration: none;
                 color: white;
-                padding: 1rem 1.6rem;
+                padding: 1rem 1.3rem;
                 background-color: #2A2A2A;
                 border-radius: .6rem;
 
@@ -102,6 +97,8 @@ html {
     }
 
     .section1 {
+        width: 100%;
+        max-width: 1920px;
         .top {
             border-radius: 0.7rem;
             overflow: hidden;
@@ -109,24 +106,22 @@ html {
 
             img {
                 width: 100%;
+                object-fit: cover;
             }
         }
-
         .bottom {
             border-radius: 0.7rem;
             background-color: #1E1E1E;
-            @include flex(start, space-between);
-            flex-direction: column;
+            @include flex(space-between, start,column);
             gap: 4.5rem;
             padding: 2.2rem;
 
             .top-content {
                 font-family: roboto, sans-serif;
-                font-size: 1.1rem;
+                font-size: 1rem;
                 color: rgb(238, 228, 228);
 
             }
-
             .bottom-content {
 
                 p:nth-child(1) {
@@ -135,7 +130,6 @@ html {
                     font-family: chillax, sans-serif;
                     font-size: 2.6rem;
                 }
-
                 p:nth-child(2) {
 
                     font-family: satoshi, sans-serif;
@@ -169,7 +163,6 @@ html {
 }
 
 
-
 @media (min-width: 480px) {
     #main nav .navright .getintouch {
         display: block;
@@ -187,5 +180,24 @@ html {
 
     #main nav .navright .hide_above_990 {
         display: none;
+    }
+
+    #main .section1{
+        display: flex;
+        gap: 1rem;
+        margin: 1.1rem 0rem;
+        
+        .top{
+            width: 50%;
+            margin: 0rem;
+            img{
+                height: 100%;
+            }
+        }
+        .bottom{
+            gap: 12.5rem;
+            width: 50%;
+            padding: 3.1rem;
+        }
     }
 }
