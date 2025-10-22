@@ -25,7 +25,7 @@ int main() {
     struct msgbuf message;
 
     // Generate unique key
-    key = ftok("msgfile", 65);
+    key = ftok("progfile", 65);
     if (key == -1) {
         perror("ftok");
         exit(1);

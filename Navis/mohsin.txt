@@ -1,0 +1,57 @@
+#include <iostream>
+#include <sys/ipc.h>
+#include <sys/msg.h>
+#include <unistd.h>
+#include <cstring>
+using namespace std;
+
+// structure for message queue
+struct msg_buffer {
+    long type;
+    char text[50];
+};
+
+int main() {
+    key_t key = ftok("progfile", 65);     // generate unique key
+    int msgid = msgget(key, 0666 | IPC_CREAT);  // create message queue
+    msg_buffer msg;
+
+    pid_t pid = fork();   // create child process
+
+    if (pid == 0) { // Child process
+        sleep(1);   // slight delay so parent gets ready to receive
+        pid_t child_id = getpid();
+
+        // 1️⃣ Print child process ID
+        cout << "1. Child Process: Process ID of child process = " << child_id << endl;
+
+        // 2️⃣ Send ID to parent process through message passing
+        strcpy(msg.text, to_string(child_id).c_str());
+        msg.type = 1;
+        msgsnd(msgid, &msg, sizeof(msg.text), 0);
+        cout << "2. Child Process: Sent ID to parent process through message passing.\n";
+
+    } 
+    else { // Parent process
+        // 3️⃣ Receive the ID by parent process from child process
+        msgrcv(msgid, &msg, sizeof(msg.text), 1, 0);
+        pid_t received_id = stoi(msg.text);
+        cout << "3. Parent Process: Received ID = " << received_id << " from child process.\n";
+
+        // 4️⃣ Print confirmation of message receipt
+        cout << "4. Parent Process: ID " << received_id << " received successfully from child process.\n";
+
+        // 5️⃣ Print upper 5 numbers of the received ID
+        string id_str = to_string(received_id);
+        cout << "5. Parent Process: Upper 5 numbers of the received ID = ";
+        if (id_str.length() > 5)
+            cout << id_str.substr(0, 5) << endl;
+        else
+            cout << id_str << endl;
+
+        // Remove message queue
+        msgctl(msgid, IPC_RMID, NULL);
+    }
+
+    return 0;
+}
