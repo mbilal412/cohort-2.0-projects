@@ -1,0 +1,147 @@
+import 'package:dummy/login.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(const Signup());
+}
+
+class Signup extends StatelessWidget {
+  const Signup({super.key});
+
+  @override
+  Widget build(BuildContext context){
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:LoginPage(),
+    );
+  }
+}
+
+class LoginPage extends StatelessWidget{
+  const LoginPage({super.key});
+
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+
+        backgroundColor: Colors.white,
+
+        body: Center(
+            child: Container(
+                height: 450,
+                width: 300,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const FlutterLogo(size: 100),
+                    const SizedBox(height: 30),
+
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Email",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+
+                      ),
+                    ),
+
+                    const SizedBox(height: 5),
+
+                    TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+
+                        ),
+
+                        hintText: "Enter your Email",
+
+                      ),
+                    ),
+
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Username",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+
+                      ),
+                    ),
+
+                    const SizedBox(height: 5),
+
+                    TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+
+                        ),
+
+                        hintText: "Enter your username",
+
+                      ),
+                    ),
+
+                    const SizedBox(height: 13),
+
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Password",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+
+                      ),
+                    ),
+
+                    const SizedBox(height: 5),
+
+                    TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+
+                          ),
+                          hintText: "Enter your password"
+                      ),
+                    ),
+
+                    const SizedBox(height: 25),
+
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            print("pressed");
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const login()),
+                            );
+                          },
+                          child: const Text("Login"),
+                        ),
+                        const SizedBox(width: 20),
+                        ElevatedButton(
+                          onPressed: (){
+                            print("Login button pressed");
+                          },
+                          child: const Text("Signup"),
+                        ),
+
+                      ],
+                    ),
+                  ],
+                )
+            )
+        )
+    );
+  }
+}
+
+
+
+
+
+
