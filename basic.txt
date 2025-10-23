@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp()); // Starting point
+}
+
+// First class — main app structure
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Two Class Flutter App',
+      home: HomeScreen(), // calling the second class
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+// Second class — returns Scaffold
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home Screen'),
+        backgroundColor: Colors.blueAccent,
+      ),
+      body: Center(
+        child: Text(
+          'Hello from the second class!',
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: Colors.blueGrey,
+          ),
+        ),
+      ),
+    );
+  }
+}
