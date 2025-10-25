@@ -59,7 +59,7 @@ html {
 }
 
 #main {
-    // padding: 1rem;
+
     width: 100%;
     height: 100%;
     background-color: #121212;
@@ -172,6 +172,7 @@ html {
                     display: flex;
                     align-items: center;
                     gap: 1.6rem;
+
                     span {
                         font-family: roboto, sans-serif;
                     }
@@ -379,7 +380,7 @@ html {
 
         .left {
             background-color: #1E1E1E;
-            padding: 2rem;
+            padding: 3.1rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -410,8 +411,6 @@ html {
                 }
 
 
-
-
             }
 
         }
@@ -419,7 +418,7 @@ html {
         .right-top {
             padding: 2rem;
             @include flex(space-between, start, column);
-            gap: 4rem;
+            gap: 3rem;
             font-family: roboto, sans-serif;
             background-color: #1E1E1E;
             grid-area: right-top;
@@ -464,20 +463,20 @@ html {
 
         .right-bottom {
 
+            @include flex(space-between, center, column);
             gap: 1.3rem;
-            padding: 1.4rem;
-            @include flex(space-between, start, column);
+            padding: 1.8rem;
             font-family: roboto, sans-serif;
             background-color: #1E1E1E;
             grid-area: right-bottom;
             border-radius: 0.7rem;
 
             .top {
-                @include flex(center, center, row);
 
-                span {
+                text-align: center;
+
+                .copyright {
                     line-height: 1.6rem;
-                    text-align: center;
 
                     color: #91908D;
 
@@ -488,10 +487,6 @@ html {
             }
 
             .bottom {
-
-                @include flex(center, center, row);
-                gap: 1rem;
-                width: 100%;
 
                 i {
                     @include icon();
@@ -513,10 +508,27 @@ html {
     #main .section1 .bottom .bottom-content p:nth-child(1) {
         font-size: 2.9rem;
     }
-    #main footer .left{
+
+    #main footer .left {
         gap: 7rem;
     }
-    
+
+    #main footer .right-top {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        .first,
+        .second {
+            width: 42%;
+            flex-grow: 1;
+        }
+
+        .third {
+            width: calc(50% - 1.5rem);
+        }
+    }
+
 }
 
 @media (min-width: 765px) {
@@ -543,8 +555,23 @@ html {
         display: block;
     }
 
-    #main footer .left{
+    #main footer .left {
         gap: 9rem;
+    }
+
+    #main footer .right-top {
+
+        .first,
+        .second,
+        .third {
+            width: 20%;
+            flex-grow: 1;
+        }
+
+    }
+
+    #main footer .right-bottom {
+        flex-direction: row;
     }
 
 }
@@ -634,6 +661,19 @@ html {
 
         .right {
             white-space: nowrap;
+        }
+    }
+
+    #main footer {
+        grid-template-rows: auto;
+        grid-template-columns: 25% 1fr;
+        grid-template-areas: "left right-top"
+            "left right-bottom"
+        ;
+
+        .left,
+        .bottom {
+            flex-wrap: wrap;
         }
     }
 
