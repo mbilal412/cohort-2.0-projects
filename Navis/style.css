@@ -1,0 +1,588 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Helvetica";
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+p {
+    color: gray;
+}
+
+button{
+    cursor: pointer;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    /* background-color: black; */
+}
+
+nav {
+    width: 100%;
+    height: 17%;
+    /* background-color: darkmagenta; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 55px;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.navLeft,
+.navRight,
+.navCenter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* background-color: yellow; */
+}
+
+.navLeft img {
+    border-radius: 5px;
+}
+
+.navCenter> :last-child {
+    display: flex;
+    align-items: center;
+}
+
+.navCenter {
+    gap: 55px;
+}
+
+.navRight button,
+.sectionTextAbout button {
+    background-color: #0161FD;
+    padding: 13px 25px;
+    border: 1px solid #0161FD;
+    border-radius: 32px;
+    color: white;
+}
+.navRight button:hover,
+.sectionTextAbout button:hover {
+    color: #0161FD;
+    background-color: transparent;
+}
+.sectionTextAbout button:hover i{
+    color: black;
+}
+
+
+.navRight> :first-child,
+.sectionTextAbout> :last-child {
+    color: #0161FD;
+    background-color: transparent;
+}
+
+.navRight> :first-child:hover {
+    background-color: #0161FD;
+    padding: 13px 25px;
+    border: 1px solid #0161FD;
+    border-radius: 32px;
+    color: white;
+}
+
+.sectionTextAbout> :last-child:hover {
+    background-color: #0161FD;
+    padding: 17px 27px;
+    border: 1px solid #0161FD;
+    border-radius: 32px;
+    font-size: 16px;
+    color: white;
+}
+
+section {
+    background-color: #F6F7F9;
+    padding: 56px 52px;
+    width: 100%;
+    height: 154%;
+    display: grid;
+    grid-template-columns: 32% 1fr;
+    grid-template-rows: 30% 1fr;
+
+    grid-template-areas: "sectionText sectionTextAbout"
+        "sectionImage sectionImage";
+}
+
+
+
+.sectionText {
+    grid-area: sectionText;
+    /* background-color: darksalmon; */
+}
+
+.sectionTextAbout {
+    line-height: 1.5;
+    grid-area: sectionTextAbout;
+    /* background-color: maroon; */
+}
+
+.sectionImage {
+    grid-area: sectionImage;
+    /* background-color: red; */
+}
+
+section h1 {
+    font-weight: 600;
+    font-size: 38px;
+}
+
+section .sectionTextAbout i {
+    /* font-size: 20px; */
+    color: white;
+}
+
+.sectionTextAbout button {
+    padding: 17px 27px;
+    font-size: 16px;
+}
+
+.sectionTextAbout p {
+    margin-bottom: 24px;
+}
+
+.sectionTextAbout> :nth-child(2) {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    margin-right: 20px;
+}
+
+
+
+.sectionImage img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+#sectionAfter {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#sectionAfter div {
+    width: 14%;
+    text-align: center;
+}
+
+#sectionAfter div h1 {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+#sectionAfter div h1 {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+#aboutUs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 107%;
+    background-color: #F6F7F9;
+    padding: 56px 52px;
+}
+
+#aboutUs .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 46%;
+    height: 100%;
+    /* background-color: maroon; */
+}
+
+#aboutUs .left button {
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 32px;
+    padding: 13px 25px;
+    font-size: 22px;
+    color: rgb(67, 67, 67);
+    /* margin-bottom: 32%; */
+}
+
+#aboutUs .left h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+#aboutUs .left p {
+    font-size: 19px;
+}
+
+#aboutUs .right {
+    width: 44%;
+    height: 100%;
+    /* background-color: khaki; */
+}
+
+#aboutUs .right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+#expertise {
+    width: 100%;
+    /* background-color: salmon; */
+    padding: 85px 52px;
+
+}
+
+.expertiseTop {
+    height: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    /* background-color: #0161FD; */
+}
+
+.expertiseTop .left {
+    width: 40%;
+}
+
+.expertiseTop .right p {
+    line-height: 1.2;
+    font-size: 17px;
+    margin-top: 77px;
+}
+
+.expertiseTop .left h1 {
+    font-size: 31px;
+}
+
+.expertiseTop .left button {
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 32px;
+    padding: 13px 25px;
+    font-size: 22px;
+    color: rgb(67, 67, 67);
+    margin-bottom: 35px;
+}
+
+.expertiseTop .right {
+    width: 50%;
+}
+
+.expertiseBottom #cards {
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 16px;
+    justify-content: space-between;
+}
+
+.expertiseBottom #cards .card {
+    height: 400px;
+    width: 275px;
+    object-fit: cover;
+    border-radius: 21px;
+    /* overflow: hidden; */
+}
+
+.expertiseBottom #cards img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 21px;
+}
+
+.expertiseBottom #cards .card {
+    position: relative;
+    /* position: absolute; */
+}
+
+.expertiseBottom #cards .card .cardAbout {
+
+    position: absolute;
+    background: linear-gradient(transparent, black);
+    bottom: 0%;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 21px;
+    border-bottom-right-radius: 21px;
+}
+
+.expertiseBottom #cards .card .cardAbout h3 {
+    color: white;
+    font-size: 22px;
+}
+
+.expertiseBottom #cards .card .profile {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    background-color: #0161FD;
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all ease 0.8s;
+}
+
+.expertiseBottom #cards .card .profile:hover {
+    opacity: 1;
+}
+
+#cards .card .profile h2 {
+
+    margin-bottom: 18px;
+}
+
+#cards .card .profile h4 {
+    font-size: 15px;
+    font-weight: 400;
+    /* opacity: 0.8; */
+    margin-bottom: 40px;
+}
+
+#cards .card .profile p {
+    font-size: 14px;
+    opacity: 0.7;
+    line-height: 1.5;
+    color: rgb(218, 216, 216);
+}
+
+#cards .card .profile .socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+#cards .card .profile .socials i {
+    font-size: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    padding: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#cards .card .profile .socials i:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+#location {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 52px;
+    margin-bottom: 50px;
+}
+
+#location .left {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: ; */
+}
+
+#location .left button {
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 32px;
+    padding: 10px 18px;
+    font-size: 14px;
+    color: rgb(67, 67, 67);
+    margin-bottom: 25px;
+}
+
+#location .left h2 {
+    font-size: 35px;
+    font-weight: 500;
+}
+
+#location .left p {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+#location .left h3 {
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+#location .left .socials {
+    display: flex;
+    gap: 20px;
+}
+
+#location .left i {
+    border: 1px solid gray;
+    font-size: 22px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+
+#location .right {
+    width: 45%;
+    height: 100%;
+}
+
+#location .right img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+
+#bottom {
+    height: 95%;
+    width: 100%;
+    padding-bottom: 15px;
+    /* background-color: pink; */
+}
+
+#bottombox {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    background-color: #232323;
+    padding: 0px 40px;
+    display: grid;
+    grid-template-rows: 72% 1fr;
+    grid-template-areas: "links"
+                         "bottomnav";
+}
+
+#bottom #bottombox .links {
+    padding-top: 60px;
+    width: 100%;
+    grid-area: links;
+    display: grid;
+    grid-template-columns: 38% 24% 24% 1fr;
+    grid-template-areas: "_1 _2 _3 _4";
+}
+
+._1 {
+    grid-area: _1;
+}
+._1 .logo{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+._1  h3{
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+._1  input{
+    border: none;
+    border-radius: 20px;
+    padding: 11px 0px;
+    width: 240px;
+    padding-left: 18px;
+}
+
+._1  button{
+    background-color: #0161FD;
+    padding: 11px 20px;
+    border: 1px solid #0161FD;
+    border-radius: 32px;
+    color: white;
+    font-size: 14px;
+}
+._2 {
+    grid-area: _2;
+}
+.links ul{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+.links li{
+    cursor: pointer;
+    list-style-type: none;
+    
+}
+
+.links li:first-child{
+    font-size: 20px;
+    font-weight: 600;
+}
+._3 {
+    grid-area: _3;
+}
+
+._4 {
+    grid-area: _4;
+}
+
+
+.bottomnav{
+    color: white;
+    width: 100%;
+    grid-area: bottomnav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottomnav .left{
+    display: flex;
+    align-items: center;
+}
+
+.bottomnav .right .socials {
+    display: flex;
+    gap: 20px;
+}
+
+.bottomnav .right i {
+    
+    border: 1px solid gray;
+    font-size: 22px;
+    padding: 5px;
+    border-radius: 50%;
+}

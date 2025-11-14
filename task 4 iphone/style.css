@@ -1,0 +1,219 @@
+@font-face {
+    font-family: air;
+    src: url(./sf-pro-display_semibold.woff2);
+    font-style: italic;
+}
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+}
+
+
+nav {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav1 {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background-color: #F5F5F7;
+    gap: 42px;
+    opacity: 93%;
+    filter: blur(98%);
+}
+
+.nav2 {
+    margin-top: 52px;
+
+}
+
+.nav1 a {
+    font-size: 13px;
+    font-weight: 100;
+    text-decoration: none;
+    color: black;
+}
+
+
+.nav2 a {
+    text-decoration: none;
+
+}
+
+sup {
+
+    text-decoration: underline;
+}
+
+.nav2 a:hover .shop {
+    text-decoration: underline;
+}
+
+
+.hero {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    text-align: center;
+    color: white;
+    padding: 40px;
+    background-image: url(./hero_iphone_17_pro__bknyzxfk2agi_largetall_2x.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+}
+
+.hero :nth-child(1),
+.iphoneAir :nth-child(1),
+.magichromatic :nth-child(1) {
+    font-size: 55px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero :nth-child(2),
+.iphoneAir :nth-child(3),
+.magichromatic :nth-child(2) {
+    font-size: 29px;
+    font-weight: 400;
+    margin-bottom: 32px;
+}
+
+.button {
+    font-size: 17px;
+    border: none;
+    border-radius: 22px;
+    padding: 13px 21px;
+    margin-right: 18px;
+    border: 1px solid blue;
+    background-color: transparent;
+    color: blue;
+
+}
+
+.learn {
+    background-color: #0071E3;
+    color: white;
+    border: none;
+}
+
+.buy {
+    background-color: transparent;
+    color: #0071E3;
+}
+
+.buy:hover{
+    background-color: #0071E3;
+    color: white;
+}
+
+.iphoneAir {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 40px;
+    background-image: url(./hero_iphone_air__0gxyavihpiqu_largetall_2x.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+    background-color: #F5F5F7;
+    text-align: center;
+}
+
+.iphoneAir :nth-child(2) {
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.magichromatic {
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    padding: 40px;
+    background-image: url(./hero_iphone_17__c5vvimu9a20y_largetall_2x.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+    background-color: #F5F5F7;
+    text-align: center;
+}
+
+.watchAirpods {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.watch {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding: 40px;
+    background-image: url(./promo_apple_watch_series_11__b63hxviqvonm_large_2x.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    background-color: #F5F5F7;
+    text-align: center;
+}
+
+.airpods {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding: 40px;
+    background-image: url(./promo_airpodspro_3__f6xmza7bglei_large_2x.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+    background-color: #F5F5F7;
+    text-align: center;
+}
+
+.watch :nth-child(1),
+.airpods :nth-child(1) {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 11px;
+}
+
+.watch :nth-child(2),
+.airpods :nth-child(3) {
+    font-size: 21px;
+    font-weight: 400;
+    margin-bottom: 28px;
+}
+
+.airpods :nth-child(2){
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.watch .series{
+    font-size: 40px;
+}
+.watch .watchtext i{
+    margin-bottom: 10px;
+}
+
